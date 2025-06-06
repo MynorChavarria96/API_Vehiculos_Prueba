@@ -1,4 +1,5 @@
 const { db } = require('../config/firebase');
+const { modelSchema } = require('../schemas/modelSchema');
 const COLLECTION = 'models';
 
 async function listModels(req, res) {
@@ -29,10 +30,13 @@ async function getModel(req, res) {
 
 async function createModel(req, res) {
   try {
-    const { name, brandId } = req.body;
-    if (!name || !brandId) {
-      return res.status(400).json({ error: 'El nombre de la Marca es requerido' });
+    const { error } = modelSchema.validate(req.body, { abortEarly: false });
+    if (error) {
+      const messages = error.details.map(detail => detail.message);
+      return res.status(400).json({ errors: messages });
     }
+
+    const { name, brandId } = req.body;
 
     const brandDoc = await db.collection('brands').doc(brandId).get();
     if (!brandDoc.exists) {
@@ -42,7 +46,7 @@ async function createModel(req, res) {
     const modelData = {
       name,
       brandId,
-      brandName: brandDoc.data().name 
+      brandName: brandDoc.data().name
     };
 
     const ref = await db.collection(COLLECTION).add(modelData);
@@ -54,12 +58,14 @@ async function createModel(req, res) {
 
 async function updateModel(req, res) {
   try {
-    const { name, brandId } = req.body;
-    if (!name || !brandId) {
-      return res.status(400).json({ error: 'Nombre y brandId es requerido' });
+    const { error } = modelSchema.validate(req.body, { abortEarly: false });
+    if (error) {
+      const messages = error.details.map(detail => detail.message);
+      return res.status(400).json({ errors: messages });
     }
 
- 
+    const { name, brandId } = req.body;
+
     const brandDoc = await db.collection('brands').doc(brandId).get();
     if (!brandDoc.exists) {
       return res.status(400).json({ error: 'Marca no encontrada' });

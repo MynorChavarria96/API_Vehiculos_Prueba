@@ -1,16 +1,6 @@
 
 const Joi = require('joi');
 
-const brandSchema = Joi.object({
-  name: Joi.string().required()
-});
-
-const modelSchema = Joi.object({
-  name: Joi.string().required(),
-  brandId: Joi.string().required(),
-  brandName: Joi.string().required()
-});
-
 const vehicleSchema = Joi.object({
   name: Joi.string().required()
     .messages({
@@ -46,8 +36,4 @@ const vehicleSchema = Joi.object({
     })
 });
 
-module.exports = {
-  brandSchema,
-  modelSchema,
-  vehicleSchema
-};
+module.exports={vehicleSchema};

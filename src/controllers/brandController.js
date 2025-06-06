@@ -1,4 +1,5 @@
 const { db } = require('../config/firebase');
+const { brandSchema } = require('../schemas/brandSchema');
 const COLLECTION = 'brands';
 
 async function listBrands(req, res) {
@@ -14,19 +15,24 @@ async function listBrands(req, res) {
 async function getBrand(req, res) {
   try {
     const doc = await db.collection(COLLECTION).doc(req.params.id).get();
-    if (!doc.exists) return res.status(404).end();
+    if (!doc.exists) return res.status(400).json({ error: 'Marca no encontrada' });
     res.json({ id: doc.id, ...doc.data() });
-  } catch (e) {
+  }
+  
+  catch (e) {
     res.status(500).json({ error: e.message });
   }
 }
 
 async function createBrand(req, res) {
   try {
-    const { name } = req.body;
-    if (!name) {
-      return res.status(400).json({ error: 'El nombre es requerido' });
+    const { error } = brandSchema.validate(req.body, { abortEarly: false });
+    if (error) {
+      const messages = error.details.map(detail => detail.message);
+      return res.status(400).json({ errors: messages });
     }
+
+    const { name } = req.body;
     const ref = await db.collection(COLLECTION).add({ name });
     res.status(201).json({ id: ref.id, name });
   } catch (e) {
@@ -36,10 +42,13 @@ async function createBrand(req, res) {
 
 async function updateBrand(req, res) {
   try {
-    const { name } = req.body;
-    if (!name) {
-      return res.status(400).json({ error: 'El nombre es requerido' });
+    const { error } = brandSchema.validate(req.body, { abortEarly: false });
+    if (error) {
+      const messages = error.details.map(detail => detail.message);
+      return res.status(400).json({ errors: messages });
     }
+
+    const { name } = req.body;
     await db.collection(COLLECTION)
             .doc(req.params.id)
             .set({ name }, { merge: true });

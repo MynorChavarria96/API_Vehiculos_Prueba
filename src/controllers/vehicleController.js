@@ -1,6 +1,6 @@
 
 const { db } = require('../config/firebase');
-const { vehicleSchema } = require('../schemas/schemas');
+const { vehicleSchema } = require('../schemas/vehicleSchema');
 const COLLECTION = 'vehicles';
 
 async function listVehicles(req, res) {
