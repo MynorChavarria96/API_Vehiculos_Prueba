@@ -5,6 +5,7 @@ Este es un backend construido con **Node.js** y **Express**, que gestiona marcas
 **Endpoints principales:**
 
 **Brands**
+
 GET /brands
 
 GET /brands/:id
@@ -16,6 +17,7 @@ PUT /brands/:id
 DELETE /brands/:id
 
 **Models**
+
 GET /models
 
 GET /models/:id
@@ -27,6 +29,7 @@ PUT /models/:id
 DELETE /models/:id
 
 **Vehicles**
+
 GET /vehicles
 
 GET /vehicles/:id
