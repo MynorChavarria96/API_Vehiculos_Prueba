@@ -6,23 +6,35 @@ Este es un backend construido con **Node.js** y **Express**, que gestiona marcas
 
 **Brands**
 GET /brands
+
 GET /brands/:id
+
 POST /brands
+
 PUT /brands/:id
+
 DELETE /brands/:id
 
 **Models**
 GET /models
+
 GET /models/:id
+
 POST /models
+
 PUT /models/:id
+
 DELETE /models/:id
 
 **Vehicles**
 GET /vehicles
+
 GET /vehicles/:id
+
 POST /vehicles
+
 PUT /vehicles/:id
+
 DELETE /vehicles/:id
 
 Descargar el archivo llamado: **postman_Api Vehiculos.json** para utilizar los endpoints desde Postman
