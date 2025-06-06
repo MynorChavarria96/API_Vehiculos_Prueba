@@ -1,0 +1,373 @@
+{
+    "info": {
+        "_postman_id": "ae3f5a53-7d94-4032-834a-603935644efe",
+        "name": "Api Vehiculos",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Vehiculos",
+            "item": [
+                {
+                    "name": "Todos los vehiculos",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "https://apivehiculosprueba-production.up.railway.app/vehicles",
+                            "path": [
+                                "vehicles"
+                            ],
+                            "protocol": "https",
+                            "host": [
+                                "apivehiculosprueba-production",
+                                "up",
+                                "railway",
+                                "app"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Vehiculo por UID",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "https://apivehiculosprueba-production.up.railway.app/vehicles/H82YHfbVRw6DW7mLBVxI",
+                            "path": [
+                                "vehicles",
+                                "H82YHfbVRw6DW7mLBVxI"
+                            ],
+                            "protocol": "https",
+                            "host": [
+                                "apivehiculosprueba-production",
+                                "up",
+                                "railway",
+                                "app"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Crear vehiculo",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "https://apivehiculosprueba-production.up.railway.app/vehicles",
+                            "path": [
+                                "vehicles"
+                            ],
+                            "protocol": "https",
+                            "host": [
+                                "apivehiculosprueba-production",
+                                "up",
+                                "railway",
+                                "app"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"name\": \"Test\",\n  \"plate\": \"123AAA\",\n  \"color\": \"Gris\",\n  \"year\": \"2025\",\n  \"modelId\": \"HCSc9vi1m7rmYQd1Dscs\",\n  \"imageUrl\": \"\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Actualizar Vehiculo",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "https://apivehiculosprueba-production.up.railway.app/vehicles/wuHBqErBpIrcPrqiPv4T",
+                            "path": [
+                                "vehicles",
+                                "wuHBqErBpIrcPrqiPv4T"
+                            ],
+                            "protocol": "https",
+                            "host": [
+                                "apivehiculosprueba-production",
+                                "up",
+                                "railway",
+                                "app"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"name\": \"Testeos\",\n  \"plate\": \"123AAA\",\n  \"color\": \"Gris\",\n  \"year\": \"2025\",\n  \"modelId\": \"HCSc9vi1m7rmYQd1Dscs\",\n  \"imageUrl\": \"\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Eliminar Vehiculo",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "https://apivehiculosprueba-production.up.railway.app/vehicles/wuHBqErBpIrcPrqiPv4T",
+                            "path": [
+                                "vehicles",
+                                "wuHBqErBpIrcPrqiPv4T"
+                            ],
+                            "protocol": "https",
+                            "host": [
+                                "apivehiculosprueba-production",
+                                "up",
+                                "railway",
+                                "app"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Marcas",
+            "item": [
+                {
+                    "name": "Todas la Marcas",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "https://apivehiculosprueba-production.up.railway.app/brands",
+                            "path": [
+                                "brands"
+                            ],
+                            "protocol": "https",
+                            "host": [
+                                "apivehiculosprueba-production",
+                                "up",
+                                "railway",
+                                "app"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Marca por UID",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "https://apivehiculosprueba-production.up.railway.app/brands/a0TUHLnjD7ZMSpAUOZiL",
+                            "path": [
+                                "brands",
+                                "a0TUHLnjD7ZMSpAUOZiL"
+                            ],
+                            "protocol": "https",
+                            "host": [
+                                "apivehiculosprueba-production",
+                                "up",
+                                "railway",
+                                "app"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Crear Marca",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "https://apivehiculosprueba-production.up.railway.app/brands",
+                            "path": [
+                                "brands"
+                            ],
+                            "protocol": "https",
+                            "host": [
+                                "apivehiculosprueba-production",
+                                "up",
+                                "railway",
+                                "app"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n    \"name\": \"Suzukis\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Eliminar Marca",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "https://apivehiculosprueba-production.up.railway.app/brands/a0TUHLnjD7ZMSpAUOZiL",
+                            "path": [
+                                "brands",
+                                "a0TUHLnjD7ZMSpAUOZiL"
+                            ],
+                            "protocol": "https",
+                            "host": [
+                                "apivehiculosprueba-production",
+                                "up",
+                                "railway",
+                                "app"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Actualizar Marca",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "https://apivehiculosprueba-production.up.railway.app/brands/UoUhYsYVW2tWNSWbD9ue",
+                            "path": [
+                                "brands",
+                                "UoUhYsYVW2tWNSWbD9ue"
+                            ],
+                            "protocol": "https",
+                            "host": [
+                                "apivehiculosprueba-production",
+                                "up",
+                                "railway",
+                                "app"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n    \"name\": \"Suzuki\"\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Modelos",
+            "item": [
+                {
+                    "name": "Todos los modelos",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "https://apivehiculosprueba-production.up.railway.app/models",
+                            "path": [
+                                "models"
+                            ],
+                            "protocol": "https",
+                            "host": [
+                                "apivehiculosprueba-production",
+                                "up",
+                                "railway",
+                                "app"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Modelo por UID",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "https://apivehiculosprueba-production.up.railway.app/models/GMYvD7RkXRUqjb2nhSPU",
+                            "path": [
+                                "models",
+                                "GMYvD7RkXRUqjb2nhSPU"
+                            ],
+                            "protocol": "https",
+                            "host": [
+                                "apivehiculosprueba-production",
+                                "up",
+                                "railway",
+                                "app"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Crear Modelo",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "https://apivehiculosprueba-production.up.railway.app/models",
+                            "path": [
+                                "models"
+                            ],
+                            "protocol": "https",
+                            "host": [
+                                "apivehiculosprueba-production",
+                                "up",
+                                "railway",
+                                "app"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"brandId\": \"iql4rWZ75hc98bQayjmB\",\n  \"brandName\": \" \",\n  \"name\": \"Tacoma\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Eliminar Modelo",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "https://apivehiculosprueba-production.up.railway.app/models/vzytwRq7x7s12OJu9faE",
+                            "path": [
+                                "models",
+                                "vzytwRq7x7s12OJu9faE"
+                            ],
+                            "protocol": "https",
+                            "host": [
+                                "apivehiculosprueba-production",
+                                "up",
+                                "railway",
+                                "app"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Actualizar Modelo",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "https://apivehiculosprueba-production.up.railway.app/models/46a1DcCIre1wEjHGErxD",
+                            "path": [
+                                "models",
+                                "46a1DcCIre1wEjHGErxD"
+                            ],
+                            "protocol": "https",
+                            "host": [
+                                "apivehiculosprueba-production",
+                                "up",
+                                "railway",
+                                "app"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"brandId\": \"iql4rWZ75hc98bQayjmB\",\n  \"brandName\": \" \",\n  \"name\": \"Tacoma\"\n}"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
