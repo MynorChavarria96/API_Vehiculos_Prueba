@@ -42,8 +42,8 @@ DELETE /vehicles/:id
 
 Descargar el archivo llamado: **postman_Api Vehiculos.json** para utilizar los endpoints desde Postman
 
-*Despliegue en Railway*
-El backend está desplegado en Railway, lo que permite que los endpoints estén disponibles públicamente para realizar pruebas y validaciones.
+*Despliegue en Railway:* 
+ El backend está desplegado en Railway, lo que permite que los endpoints estén disponibles públicamente para realizar pruebas y validaciones.
 
 https://apivehiculosprueba-production.up.railway.app/
 
