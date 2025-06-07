@@ -1,49 +1,89 @@
-API gestión de vehículos concesionaria.
+# API Gestión de Vehículos Concesionaria
 
-Este es un backend construido con **Node.js** y **Express**, que gestiona marcas, modelos y vehículos, utilizando **Firebase Firestore** como base de datos. Incluye validaciones con **Joi** para garantizar la calidad de los datos.
+Este es un backend construido con Node.js y Express, que gestiona marcas, modelos y vehículos, utilizando Firebase Firestore como base de datos. Incluye validaciones con Joi para garantizar la calidad de los datos.
 
-**Endpoints principales:**
+## Tecnologías Utilizadas
 
-**Brands**
+- Node.js
+- Express.js
+- Firebase/Firestore (Base de datos)
+- Joi (Validación de datos)
 
-GET /brands
+## Requisitos Previos
 
-GET /brands/:id
+- Node.js (versión 14 o superior)
+- npm (Node Package Manager)
+- Una cuenta en Firebase y un proyecto configurado
 
-POST /brands
+## Configuración del Proyecto
 
-PUT /brands/:id
+1. Clonae el repositorio:
+```bash
+git clone [url-del-repositorio]
+cd backend_vehiculos
+```
 
-DELETE /brands/:id
+2. Instala las dependencias:
+```bash
+npm install
+```
 
-**Models**
+3. Configurar Firebase:
+   - Verificar que la configuración en `src/config/firebase.js` 
+  
+4. Variables utilizadas
+FIREBASE_PROJECT_ID
+FIREBASE_PRIVATE_KEY
+FIREBASE_CLIENT_EMAIL
 
-GET /models
 
-GET /models/:id
+## Características
 
-POST /models
+- CRUD completo para vehículos
+- Gestión de marcas y modelos
+- Validación de datos con Joi
+- Almacenamiento en Firestore
 
-PUT /models/:id
+## API Endpoints
 
-DELETE /models/:id
+### Marcas (Brands)
+- GET /brands - Obtener todas las marcas
+- GET /brands/:id - Obtener una marca específica
+- POST /brands - Crear una nueva marca
+- PUT /brands/:id - Actualizar una marca
+- DELETE /brands/:id - Eliminar una marca
 
-**Vehicles**
+### Modelos (Models)
+- GET /models - Obtener todos los modelos
+- GET /models/:id - Obtener un modelo específico
+- POST /models - Crear un nuevo modelo
+- PUT /models/:id - Actualizar un modelo
+- DELETE /models/:id - Eliminar un modelo
 
-GET /vehicles
+### Vehículos (Vehicles)
+- GET /vehicles - Obtener todos los vehículos
+- GET /vehicles/:id - Obtener un vehículo específico
+- POST /vehicles - Crear un nuevo vehículo
+- PUT /vehicles/:id - Actualizar un vehículo
+- DELETE /vehicles/:id - Eliminar un vehículo
 
-GET /vehicles/:id
+## Ejecución
 
-POST /vehicles
+Para iniciar el servidor en modo desarrollo:
 
-PUT /vehicles/:id
+```bash
+npm start
+```
 
-DELETE /vehicles/:id
+El servidor se iniciará por defecto en `http://localhost:3000`
 
-Descargar el archivo llamado: **postman_Api Vehiculos.json** para utilizar los endpoints desde Postman
+## Documentación y Pruebas
 
-*Despliegue en Railway:* 
- El backend está desplegado en Railway, lo que permite que los endpoints estén disponibles públicamente para realizar pruebas y validaciones.
+### Colección de Postman
+La colección de Postman con todos los endpoints está disponible en el archivo `postman_Api Vehiculos.json`. Descarga este archivo para probar todos los endpoints desde Postman.
 
-https://apivehiculosprueba-production.up.railway.app/
+### Despliegue en Railway
+El backend está desplegado en Railway, lo que permite que los endpoints estén disponibles públicamente para realizar pruebas y validaciones.
+
+URL de la API: [https://apivehiculosprueba-production.up.railway.app/](https://apivehiculosprueba-production.up.railway.app/)
 
